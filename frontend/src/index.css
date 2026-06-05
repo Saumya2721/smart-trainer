@@ -1,0 +1,295 @@
+/* --- Global App Layout --- */
+body {
+  margin: 0;
+  background-color: #f3f4f6;
+  font-family: sans-serif;
+  color: #111827;
+}
+
+.app-container {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.app-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* --- Summary Banner --- */
+.summary-banner {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #10b981;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* --- Charts Component --- */
+.workout-charts-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.chart-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* Tighter padding variant used by the flag summary card */
+.chart-card--compact {
+  padding: 16px 20px;
+}
+
+.chart-title {
+  margin: 0 0 8px 0;
+  color: #111827;
+}
+
+/* Red bold subtitle (kept for backward compat, not used in new charts) */
+.chart-subtitle {
+  margin: 0 0 20px 0;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Muted hint text under chart titles */
+.chart-hint {
+  margin: 0 0 12px 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* Fixed-height wrapper for every Recharts chart */
+.chart-wrapper {
+  height: 300px;
+  width: 100%;
+}
+
+/* --- Flag Summary Section --- */
+.flag-summary-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Individual flag pill — background/border/color are set inline because
+   they are dynamic (driven by FLAG_META per flag type) */
+.flag-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.flag-pill__count {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.flag-pill__label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* --- Rep Cards Grid --- */
+.rep-cards-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rep-breakdown-hint {
+  margin: 0 0 14px 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.rep-breakdown-hint .score-good  { color: #10b981; font-weight: 700; }
+.rep-breakdown-hint .score-ok    { color: #f97316; font-weight: 700; }
+.rep-breakdown-hint .score-bad   { color: #ef4444; font-weight: 700; }
+
+/* Base rep card — border/shadow are overridden inline when isOutlier is true
+   because CSS cannot read a JS boolean; everything else lives here */
+.rep-card {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-width: 160px;
+  flex: 1 1 160px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+.rep-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rep-card__label {
+  font-weight: 700;
+  font-size: 15px;
+  color: #374151;
+}
+
+/* Score value — color is set inline because it's computed from the score number */
+.rep-card__score {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.rep-card__stats {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.rep-card__stats strong {
+  color: #111827;
+}
+
+/* Outlier badge row */
+.rep-card__badges {
+  margin-top: 8px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-weight: 600;
+}
+
+.badge--iqr {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.badge--ml {
+  background: #fdf4ff;
+  color: #7c3aed;
+  border: 1px solid #e9d5ff;
+}
+
+/* Form flag badges — background/color/border stay inline (dynamic per flag) */
+.rep-card__flags {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.flag-badge {
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-weight: 600;
+}
+
+/* --- File Uploader Component --- */
+.upload-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.selector-container {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.selector-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.selector-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+}
+
+.dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: border 0.2s ease, background-color 0.2s ease;
+  background-color: #f9fafb;
+  margin-bottom: 16px;
+}
+
+.dropzone.active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #6b7280;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.upload-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ef4444;
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: bold;
+}

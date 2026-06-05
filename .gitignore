@@ -1,0 +1,41 @@
+# ========================
+# 1. Node.js (Backend & Frontend)
+# ========================
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+.env.*
+!.env.example
+
+# ========================
+# 2. Python (ML-Service)
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# ========================
+# 3. React / Vite (Frontend)
+# ========================
+dist/
+dist-ssr/
+*.local
+
+# ========================
+# 4. OS & Editor Files
+# ========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ========================
+# 5. Project Specific
+# ========================
+backend/uploads/
+# (Ignore the uploads folder so Git doesn't track temporary CSV files)
