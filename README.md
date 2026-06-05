@@ -9,7 +9,7 @@
 
 | Hardware Setup |
 | :---: | 
-| <img src="docs/hardware-photo.jpg" width="250"/> | 
+| <img src="docs/SmartTrainer.jpeg" width="250"/> | 
 | *ESP8266 + ICM-20948 IMU* |
 
 ---
