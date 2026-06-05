@@ -5,7 +5,7 @@
 
 ---
 
-## 📸 Project Showcase
+## Project Showcase
 
 | Hardware Setup |
 | :---: | 
@@ -14,7 +14,7 @@
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 * **Custom IoT Wearable:** C++ firmware running on an ESP8266, sampling 9-axis IMU data (ICM-20948) at ~66Hz with local SD card logging.
 * **3-Layer Anomaly Detection Pipeline:** 
@@ -25,7 +25,7 @@
 
 ---
 
-## 🧠 System Architecture
+## System Architecture
 
 The project is split into a **Monorepo** containing three distinct services:
 
@@ -47,41 +47,46 @@ The project is split into a **Monorepo** containing three distinct services:
 ## 🛠️ Getting Started (Local Development)
 
 ### Prerequisites
-1. Node.js (v18+)
-2. Python (3.9+)
-3. PostgreSQL running locally
+* Node.js (v18+)
+* Python (3.9+)
+* PostgreSQL running locally
 
-** 1. Clone the Repository **
+### 1. Clone the Repository 
 ```bash
 git clone [https://github.com/Saumya2721/smart-trainer.git](https://github.com/Saumya2721/smart-trainer.git)
 cd smart-trainer
+```
 
-** 2. Set up the ML Microservice **
+### 2. Set up the ML Microservice 
 ```bash
 cd ml-service
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
+```
 
-** 3. Set up the Node Backend **
+### 3. Set up the Node Backend
 ```bash
 cd backend
 npm install
 # Create a .env file and add your PostgreSQL credentials & PYTHON_API_URL=http://localhost:8000/api/analyze
 npm run dev
+```
 
-** 4. Set up the React Frontend **
+### 4. Set up the React Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
+```
+---
 
-### Future Roadmap
-Implement robust Quaternion math for full 3D spatial tracking.
+## Future Roadmap
+* Implement robust Quaternion math for full 3D spatial tracking.
 
-Add live WebSocket streaming directly from the ESP8266 to the React frontend.
+* Add live WebSocket streaming directly from the ESP8266 to the React frontend.
 
-Expand ML model to classify different exercise types automatically (e.g., Hammer Curl vs. Biceps Curl).
+* Expand ML model to classify different exercise types automatically (e.g., Hammer Curl vs. Biceps Curl).
 
-Build user authentication for personal workout history tracking.
+* Build user authentication for personal workout history tracking.
